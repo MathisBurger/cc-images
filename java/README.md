@@ -33,3 +33,8 @@ For the use of `openjfx` you will have to add following plugin to your `pom.xml`
     </configuration>
 </plugin>
 ```
+
+Furthermore, your command should look like this:
+```bash
+Xvfb :99 -screen 0 1024x768x16 & export DISPLAY=:99 && export XDG_RUNTIME_DIR="/tmp/xdg-runtime-$(id -u)" && mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR" && mvn clean install && mvn exec:java -Dprism.order=sw
+```
