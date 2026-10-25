@@ -15,3 +15,5 @@ RUN mvn clean install
 RUN mvn dependency:go-offline
 
 COPY settings.xml /root/.m2/settings.xml
+RUN chown -R 9999 /app
+USER 9999
